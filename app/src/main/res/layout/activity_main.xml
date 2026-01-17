@@ -2,53 +2,122 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#18171D"
     android:orientation="vertical"
     android:padding="24dp">
 
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="302dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Title" />
-
-    <EditText
-        android:id="@+id/weightInput"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="Weight (kg)"
-        android:inputType="numberDecimal" />
+        android:layout_height="match_parent"
+        android:background="#463671"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <EditText
-        android:id="@+id/heightInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="Height (cm)"
-        android:inputType="numberDecimal" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:background="#FBEFFA"
+            android:gravity="center"
+            android:text="Macro Calculator"
+            android:textSize="30dp" />
 
-    <EditText
-        android:id="@+id/ageInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="Age"
-        android:inputType="number" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="506dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/sexInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="Sex (male/female)"
-        android:inputType="text" />
+            <EditText
+                android:id="@+id/sexInput"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:layout_margin="2pt"
+                android:background="#FBEFFA"
+                android:hint="Sex (male/female)"
+                android:inputType="text" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/ageInput"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:layout_margin="2pt"
+                android:background="#FBEFFA"
+                android:hint="Age"
+                android:inputType="number" />
 
+            <EditText
+                android:id="@+id/heightInput"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_margin="2pt"
+                android:background="#FBEFFA"
+                android:hint="Height (cm)"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/weightInput"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:layout_margin="2pt"
+                android:background="#FBEFFA"
+                android:hint="Weight (kg)"
+                android:inputType="numberDecimal" />
+
+            <RadioGroup
+                android:id="@+id/activityGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <RadioButton
+                    android:id="@+id/activitySedentary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sedentary (Little to 0 exercise)">
+
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/activityLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Light Activity">
+
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/activityModerate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Moderate Activity">
+
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/activityActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Very Active">
+
+                </RadioButton>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/calbutton"
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="#FBEFFA"
+                android:text="Calculate" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
