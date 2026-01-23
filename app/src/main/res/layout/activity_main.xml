@@ -23,13 +23,16 @@
             android:text="Macro Calculator"
             android:textSize="30dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="506dp"
-            android:gravity="center"
-            android:orientation="vertical">
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/unitSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="Metric (kg / cm)"
+            android:textOn="Imperial (lb / in)"
+            android:checked="false" />
 
-            <EditText
+
+        <EditText
                 android:id="@+id/sexInput"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
@@ -105,6 +108,14 @@
 
                 </RadioButton>
 
+                <RadioButton
+                    android:id="@+id/activityExtra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Super Active">
+
+                </RadioButton>
+
             </RadioGroup>
 
             <Button
@@ -119,5 +130,3 @@
         </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>

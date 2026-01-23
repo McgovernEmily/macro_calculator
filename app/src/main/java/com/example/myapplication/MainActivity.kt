@@ -6,8 +6,18 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
+
+
+private const val LB_TO_KG = 0.453592
+private const val IN_TO_CM = 2.54
+
+private fun lbsToKg(lbs: Double) = lbs * LB_TO_KG
+private fun inchesToCm(inches: Double) = inches * IN_TO_CM
+
 
 class MainActivity : AppCompatActivity(){
+
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
@@ -19,6 +29,18 @@ class MainActivity : AppCompatActivity(){
         val weightInput = findViewById<EditText>(R.id.weightInput)
         val calButton = findViewById<Button>(R.id.calbutton)
         val activityGroup = findViewById<RadioGroup>(R.id.activityGroup)
+        val unitSwitch = findViewById<SwitchCompat>(R.id.unitSwitch)
+
+        unitSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                weightInput.hint = "Weight (lb)"
+                heightInput.hint = "Height (in)"
+            } else {
+                weightInput.hint = "Weight (kg)"
+                heightInput.hint = "Height (cm)"
+            }
+        }
+
 
         calButton.setOnClickListener {
             val sex = sexInput.text.toString()
@@ -27,26 +49,37 @@ class MainActivity : AppCompatActivity(){
             val weight = weightInput.text.toString().toDoubleOrNull()
             val selectedId = activityGroup.checkedRadioButtonId
 
-            if (age == null || height == null || weight == null || sex.isBlank()){
+            if (age == null || height == null || weight == null || sex.isBlank()) {
                 return@setOnClickListener
             }
 
-            val findActivity = if (selectedId) {
-                R.id.activitySedentary = 1.2
+            // Finding the activity level
+            val activityLevel = when (selectedId) {
+                R.id.activitySedentary -> 1
+                R.id.activityLight -> 2
+                R.id.activityModerate -> 3
+                R.id.activityActive -> 4
+                R.id.activityExtra -> 5
+                else -> 1
             }
 
-            val macros = calculate(
-                weightkg = weight,
-                heightcm = height,
-                age = age,
-                sex = sex
-            )
-            val intent = Intent(this, ResultActivity::class.java)
+            // Converts to metric if imperial is selected
+            val weightKg = if (unitSwitch.isChecked) lbsToKg(weight) else weight
+            val heightCm = if (unitSwitch.isChecked) inchesToCm(height) else height
 
+            val macros = calculate(
+                weightkg = weightKg,
+                heightcm = heightCm,
+                age = age,
+                sex = sex,
+                activitylevel = activityLevel
+            )
+
+            val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra("calories", macros.calories)
-            intent.putExtra("protein", macros.protein)
-            intent.putExtra("carbs", macros.carbs)
-            intent.putExtra("fats", macros.fats)
+            intent.putExtra("proteinGrams", macros.proteinGrams)
+            intent.putExtra("carbsGrams", macros.carbGrams)
+            intent.putExtra("fatsGrams", macros.fatGrams)
 
             startActivity(intent)
         }

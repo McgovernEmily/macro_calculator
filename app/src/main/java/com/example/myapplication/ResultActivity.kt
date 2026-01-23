@@ -16,15 +16,15 @@ class ResultActivity : AppCompatActivity() {
         val resultText = findViewById<TextView>(R.id.results)
 
         val calories = intent.getIntExtra("calories", 0)
-        val protein = intent.getIntExtra("protein", 0)
-        val fats = intent.getIntExtra("fats", 0)
-        val carbs = intent.getIntExtra("carbs", 0)
+        val proteinGrams = intent.getIntExtra("proteinGrams", 0)
+        val fatsGrams = intent.getIntExtra("fatsGrams", 0)
+        val carbsGrams = intent.getIntExtra("carbsGrams", 0)
 
         resultText.text = """
-            Calories: $calories
-            Protein: $protein
-            Carbs: $carbs
-            Fats: $fats
+            Calories: $calories 
+            Protein: ${proteinGrams}g
+            Carbs: ${carbsGrams}g
+            Fats: ${fatsGrams}g
         """.trimIndent()
     }
 }
