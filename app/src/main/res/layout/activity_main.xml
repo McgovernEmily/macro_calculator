@@ -2,131 +2,111 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#18171D"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:background="@drawable/food"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#463671"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="24dp"
+        android:background="#AA000000">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="74dp"
+            android:layout_height="wrap_content"
             android:background="#FBEFFA"
             android:gravity="center"
             android:text="Macro Calculator"
-            android:textSize="30dp" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/unitSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textOff="Metric (kg / cm)"
-            android:textOn="Imperial (lb / in)"
-            android:checked="false" />
-
+            android:textSize="30sp"
+            android:padding="12dp" />
 
         <EditText
-                android:id="@+id/sexInput"
-                android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:layout_gravity="center"
-                android:layout_margin="2pt"
-                android:background="#FBEFFA"
-                android:hint="Sex (male/female)"
-                android:inputType="text" />
+            android:id="@+id/sexInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#FBEFFA"
+            android:hint="Sex (male/female)"
+            android:inputType="text" />
 
-            <EditText
-                android:id="@+id/ageInput"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:layout_gravity="center"
-                android:layout_margin="2pt"
-                android:background="#FBEFFA"
-                android:hint="Age"
-                android:inputType="number" />
+        <EditText
+            android:id="@+id/ageInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="#FBEFFA"
+            android:hint="Age"
+            android:inputType="number" />
 
-            <EditText
-                android:id="@+id/heightInput"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:layout_margin="2pt"
-                android:background="#FBEFFA"
-                android:hint="Height (cm)"
-                android:inputType="numberDecimal" />
+        <EditText
+            android:id="@+id/heightInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="#FBEFFA"
+            android:hint="Height (cm)"
+            android:inputType="numberDecimal" />
 
-            <EditText
-                android:id="@+id/weightInput"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:layout_gravity="center"
-                android:layout_margin="2pt"
-                android:background="#FBEFFA"
-                android:hint="Weight (kg)"
-                android:inputType="numberDecimal" />
+        <EditText
+            android:id="@+id/weightInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="#FBEFFA"
+            android:hint="Weight (kg)"
+            android:inputType="numberDecimal" />
 
-            <RadioGroup
-                android:id="@+id/activityGroup"
-                android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/activityGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <RadioButton
+                android:id="@+id/activitySedentary"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="16dp">
+                android:text="Sedentary" />
 
-                <RadioButton
-                    android:id="@+id/activitySedentary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sedentary (Little to 0 exercise)">
-
-                </RadioButton>
-                <RadioButton
-                    android:id="@+id/activityLight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Light Activity">
-
-                </RadioButton>
-                <RadioButton
-                    android:id="@+id/activityModerate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Moderate Activity">
-
-                </RadioButton>
-                <RadioButton
-                    android:id="@+id/activityActive"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Very Active">
-
-                </RadioButton>
-
-                <RadioButton
-                    android:id="@+id/activityExtra"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Super Active">
-
-                </RadioButton>
-
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/calbutton"
-                android:layout_width="116dp"
+            <RadioButton
+                android:id="@+id/activityLight"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="#FBEFFA"
-                android:text="Calculate" />
+                android:text="Light Activity" />
 
-        </LinearLayout>
+            <RadioButton
+                android:id="@+id/activityModerate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moderate Activity" />
+
+            <RadioButton
+                android:id="@+id/activityActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Very Active" />
+
+            <RadioButton
+                android:id="@+id/activityExtra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Super Active" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/calbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="#FBEFFA"
+            android:text="Calculate" />
 
     </LinearLayout>
+
+</LinearLayout>

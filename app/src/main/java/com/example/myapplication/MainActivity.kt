@@ -7,13 +7,7 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
-
-
-private const val LB_TO_KG = 0.453592
-private const val IN_TO_CM = 2.54
-
-private fun lbsToKg(lbs: Double) = lbs * LB_TO_KG
-private fun inchesToCm(inches: Double) = inches * IN_TO_CM
+import android.view.View
 
 
 class MainActivity : AppCompatActivity(){
@@ -29,17 +23,7 @@ class MainActivity : AppCompatActivity(){
         val weightInput = findViewById<EditText>(R.id.weightInput)
         val calButton = findViewById<Button>(R.id.calbutton)
         val activityGroup = findViewById<RadioGroup>(R.id.activityGroup)
-        val unitSwitch = findViewById<SwitchCompat>(R.id.unitSwitch)
 
-        unitSwitch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                weightInput.hint = "Weight (lb)"
-                heightInput.hint = "Height (in)"
-            } else {
-                weightInput.hint = "Weight (kg)"
-                heightInput.hint = "Height (cm)"
-            }
-        }
 
 
         calButton.setOnClickListener {
@@ -63,13 +47,9 @@ class MainActivity : AppCompatActivity(){
                 else -> 1
             }
 
-            // Converts to metric if imperial is selected
-            val weightKg = if (unitSwitch.isChecked) lbsToKg(weight) else weight
-            val heightCm = if (unitSwitch.isChecked) inchesToCm(height) else height
-
             val macros = calculate(
-                weightkg = weightKg,
-                heightcm = heightCm,
+                weightkg = weight,
+                heightcm = height,
                 age = age,
                 sex = sex,
                 activitylevel = activityLevel
