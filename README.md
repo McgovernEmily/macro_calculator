@@ -2,7 +2,7 @@
 
 A Macro calculator that calculates your proteins, fats, carbs, and calories based on the user's height, weight, age, activity level, and gender. After the recommended macros are calculated, the user can track their progress on a calendar to see whether they completed their goal for that day.
 
-## Instructions for Build and Use
+## Instructions for Building and Using
 
 Steps to build and/or run the software:
 
@@ -50,3 +50,4 @@ The following items I plan to fix, improve, and/or add to this project in the fu
 * [ ] Have the calendar go week by week
 * [ ] Create a way to implement workout ideas or training ideas for the user
 * [ ] Make it use both the metric and the imperial system
+* [ ] Add confetti for completing the goal
