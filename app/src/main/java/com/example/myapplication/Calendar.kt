@@ -17,6 +17,7 @@ class Calendar : AppCompatActivity() {
 
         val calendarView = findViewById<CalendarView>(R.id.calendarView)
 
+
         val calories = intent.getIntExtra("calories", 0)
         val protein = intent.getIntExtra("protein", 0)
         val fats = intent.getIntExtra("fats", 0)
@@ -55,6 +56,7 @@ class Calendar : AppCompatActivity() {
             }
             .show()
     }
+
 
     private fun saveDayResult(dateKey: String, metGoal: Boolean) {
         val pref = getSharedPreferences("nutrition_calendar", MODE_PRIVATE)

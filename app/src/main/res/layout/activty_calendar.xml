@@ -30,5 +30,11 @@
             android:background="@color/white" />
 
     </LinearLayout>
+        <nl.dionsegijn.konfetti.xml.KonfettiView
+            android:id="@+id/confettiView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false" />
+
 
 </LinearLayout>

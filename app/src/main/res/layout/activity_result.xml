@@ -1,33 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/food"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="16dp">
 
+    <!-- Card Container -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#AA000000"
         android:orientation="vertical"
-        android:background="#AA000000">
+        android:padding="25dp">
 
+        <!-- Title -->
         <TextView
-            android:id="@+id/results"
-            android:layout_width="338dp"
-            android:layout_height="301dp"
-            android:background="#FBEFFA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Daily Macros"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
             android:gravity="center"
-            android:text="TextView"
-            android:textSize="20sp"
-            />
+            android:paddingBottom="12dp" />
 
+        <!-- Inner Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FBEFFA"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/caloriesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calories: 2000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/proteinText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Protein: 150 g"
+                android:textSize="18sp"
+                android:paddingBottom="4dp" />
+
+            <TextView
+                android:id="@+id/carbsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carbs: 220 g"
+                android:textSize="18sp"
+                android:paddingBottom="4dp" />
+
+            <TextView
+                android:id="@+id/fatsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fats: 60 g"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Button -->
         <Button
             android:id="@+id/calendarButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add to Calendar"/>
+            android:text="Add to Calendar"
+            android:layout_marginTop="12dp" />
 
     </LinearLayout>
 

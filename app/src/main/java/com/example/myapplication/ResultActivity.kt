@@ -15,19 +15,17 @@ class ResultActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_result)
 
-        val resultText = findViewById<TextView>(R.id.results)
-
         val calories = intent.getIntExtra("calories", 0)
         val proteinGrams = intent.getIntExtra("proteinGrams", 0)
         val fatsGrams = intent.getIntExtra("fatsGrams", 0)
         val carbsGrams = intent.getIntExtra("carbsGrams", 0)
 
-        resultText.text = """
-            Calories: $calories 
-            Protein: ${proteinGrams}g
-            Carbs: ${carbsGrams}g
-            Fats: ${fatsGrams}g
-        """.trimIndent()
+        // Finding the id in the xml file and assigning it.
+        findViewById<TextView>(R.id.caloriesText).text = "Calories: $calories"
+        findViewById<TextView>(R.id.proteinText).text = "Protein: $proteinGrams g"
+        findViewById<TextView>(R.id.carbsText).text = "Carbs: $carbsGrams g"
+        findViewById<TextView>(R.id.fatsText).text = "Fats: $fatsGrams g"
+
 
         val calButton = findViewById<Button>(R.id.calendarButton)
 
