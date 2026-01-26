@@ -1,6 +1,8 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,5 +28,17 @@ class ResultActivity : AppCompatActivity() {
             Carbs: ${carbsGrams}g
             Fats: ${fatsGrams}g
         """.trimIndent()
+
+        val calButton = findViewById<Button>(R.id.calendarButton)
+
+        calButton.setOnClickListener {
+            val intent = Intent(this, Calendar::class.java)
+            intent.putExtra("calories", calories)
+            intent.putExtra("protein", proteinGrams)
+            intent.putExtra("carbs", carbsGrams)
+            intent.putExtra("fats", fatsGrams)
+            startActivity(intent)
+        }
+
     }
 }

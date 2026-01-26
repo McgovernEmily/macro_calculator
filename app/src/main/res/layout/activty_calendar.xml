@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/food"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center">
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#AA000000"
         android:orientation="vertical"
-        android:background="#AA000000">
+        android:padding="16dp">
 
         <TextView
-            android:id="@+id/results"
-            android:layout_width="338dp"
-            android:layout_height="301dp"
-            android:background="#FBEFFA"
-            android:gravity="center"
-            android:text="TextView"
-            android:textSize="20sp"
-            />
-
-        <Button
-            android:id="@+id/calendarButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add to Calendar"/>
+            android:text="Weekly Nutrition Tracker"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:paddingBottom="12dp"/>
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
 
     </LinearLayout>
 
