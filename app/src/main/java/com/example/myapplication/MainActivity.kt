@@ -13,10 +13,12 @@ import android.view.View
 class MainActivity : AppCompatActivity(){
 
 
+    // Connecting to the XML.
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Creating variable to the layout.
         val sexInput = findViewById<EditText>(R.id.sexInput)
         val ageInput = findViewById<EditText>(R.id.ageInput)
         val heightInput = findViewById<EditText>(R.id.heightInput)
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity(){
 
 
 
+        // When the the edittext is selected the user can type.
         calButton.setOnClickListener {
             val sex = sexInput.text.toString()
             val age = ageInput.text.toString().toIntOrNull()
@@ -47,6 +50,7 @@ class MainActivity : AppCompatActivity(){
                 else -> 1
             }
 
+            // Aligning the variable in macrocal to mainactivity variables.
             val macros = calculate(
                 weightkg = weight,
                 heightcm = height,

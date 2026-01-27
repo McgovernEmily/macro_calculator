@@ -48,6 +48,7 @@ fun calculate(
     val fatCalories = (0.25 * finalcalories).roundToInt()
     val fatGrams = (fatCalories / 9.0).roundToInt()
 
+    // Finding the carbs to recommend.
     val remainingCalories = (finalcalories - proteinCalories - fatCalories).coerceAtLeast(0)
     val carbGrams = (remainingCalories / 4.0).roundToInt()
 

@@ -11,17 +11,21 @@ import androidx.appcompat.app.AlertDialog
 
 class Calendar : AppCompatActivity() {
 
+    // Connecting to the activity calendar XML
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activty_calendar)
 
+        // Finding the calendar in the XML
         val calendarView = findViewById<CalendarView>(R.id.calendarView)
 
 
+        // Creating variables.
         val calories = intent.getIntExtra("calories", 0)
         val protein = intent.getIntExtra("protein", 0)
         val fats = intent.getIntExtra("fats", 0)
         val carbs = intent.getIntExtra("carbs", 0)
+
 
         calendarView.setOnDateChangeListener {_, year, month, dayOfMonth ->
             val datekey = "$year-${month + 1}-$dayOfMonth"
@@ -31,6 +35,7 @@ class Calendar : AppCompatActivity() {
         }
     }
 
+    // Will show the dialog when clicking the day on the calendar.
     private fun showGoalDialog(
         datekey: String,
         calories: Int,
@@ -46,6 +51,7 @@ class Calendar : AppCompatActivity() {
                 "Carbs: $carbs g\n" +
                 "fats: $fats g"
             )
+            // If yes is selected it will make the goal true, if no is selected it will make it false.
             .setPositiveButton("YES") { _, _ ->
                 saveDayResult(datekey, true)
                 Toast.makeText(this, "Saved for $datekey", Toast.LENGTH_SHORT).show()
@@ -56,6 +62,7 @@ class Calendar : AppCompatActivity() {
             }
             .show()
     }
+
 
 
     private fun saveDayResult(dateKey: String, metGoal: Boolean) {

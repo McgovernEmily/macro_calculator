@@ -10,6 +10,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class ResultActivity : AppCompatActivity() {
+
+    // Connecting the XML file to ResultActivity.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,7 +28,7 @@ class ResultActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.carbsText).text = "Carbs: $carbsGrams g"
         findViewById<TextView>(R.id.fatsText).text = "Fats: $fatsGrams g"
 
-
+        // Calendar button is clicked it will go to calendar.
         val calButton = findViewById<Button>(R.id.calendarButton)
 
         calButton.setOnClickListener {
