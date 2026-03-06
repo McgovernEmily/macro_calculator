@@ -26,6 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Calendar" />
+        <activity android:name=".AddFoodActivity" />
+        <activity android:name=".FoodLogActivity" />
     </application>
 
 </manifest>

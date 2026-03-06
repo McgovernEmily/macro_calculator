@@ -18,11 +18,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Weekly Nutrition Tracker"
-            android:textSize="22sp"
-            android:textColor="#FFFFFF"
             android:gravity="center"
-            android:paddingBottom="12dp"/>
+            android:paddingBottom="12dp"
+            android:text="Weekly Nutrition Tracker"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
 
         <!---The calendar-->
         <CalendarView
@@ -32,5 +32,73 @@
             android:background="@color/white" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/caloriesView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calories"
+        android:background="#AA000000"
+        android:textColor="@color/white"/>
+
+    <ProgressBar
+        android:id="@+id/calorieProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:max="2000"
+        android:progress="0"
+        android:background="#AA000000"/>
+
+    <TextView
+        android:id="@+id/proteinView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Protein"
+        android:background="#AA000000"
+        android:textColor="@color/white"/>
+
+    <ProgressBar
+        android:id="@+id/proteinProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:max="2000"
+        android:progress="0"
+        android:background="#AA000000"/>
+
+    <TextView
+        android:id="@+id/carbsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Carbs"
+        android:background="#AA000000"
+        android:textColor="@color/white"/>
+
+    <ProgressBar
+        android:id="@+id/carbsProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:max="2000"
+        android:progress="0"
+        android:background="#AA000000"/>
+
+    <TextView
+        android:id="@+id/fatsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fats"
+        android:background="#AA000000"
+        android:textColor="@color/white"/>
+
+    <ProgressBar
+        android:id="@+id/fatsProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:max="2000"
+        android:progress="0"
+        android:background="#AA000000"/>
 
 </LinearLayout>
