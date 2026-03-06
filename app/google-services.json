@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "493514059419",
+    "project_id": "protein-tracker-6a532",
+    "storage_bucket": "protein-tracker-6a532.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493514059419:android:9e42911558928f1135a03e",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmP76ZPe8NfypXbIHOfU3ND0S1w8IR5Bc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
