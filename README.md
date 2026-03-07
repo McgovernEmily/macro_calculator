@@ -13,7 +13,7 @@ Steps to build and/or run the software:
 Instructions for using the software:
 
 1. Open the app on an emulator or Android device
-2. Log in to your account or create an account 
+2. Log in to your account 
 3. Enter your gender, age, height, weight, and activity level
 4. Select Calculate
 5. See your recommended macros
@@ -22,7 +22,10 @@ Instructions for using the software:
 8. Select what type of meal
 9. Input the macros associated with the meal
 10. Save the macros input
-11. Check your progress at the calendar view
+11. Check your progress in the calendar view
+12. If you want to edit the food you selected, go back to the specific day
+13. Select delete or edit
+14. Edit or delete the food
 
 ## Development Environment
 
@@ -47,6 +50,7 @@ I found these websites useful in developing this software:
 
 The following items I plan to fix, improve, and/or add to this project in the future:
 
+* [ ] Able to create user accounts
 * [ ] Have the calendar go week by week
 * [ ] Create a way to implement workout ideas or training ideas for the user
 * [ ] Make it use both the metric and the imperial system
