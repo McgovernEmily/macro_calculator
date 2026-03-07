@@ -66,8 +66,6 @@ class FoodLogActivity : AppCompatActivity() {
         super.onResume()
         loadFoods()
 
-        // Update progress bars
-        checkDayMacros(datekey)
     }
 
     override fun onSupportNavigateUp(): Boolean {
