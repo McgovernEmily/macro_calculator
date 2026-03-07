@@ -4,10 +4,7 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.method.DateKeyListener
 import android.widget.CalendarView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.google.firebase.firestore.FirebaseFirestore
 import android.widget.ProgressBar
 
