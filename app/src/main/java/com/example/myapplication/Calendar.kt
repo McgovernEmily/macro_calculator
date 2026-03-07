@@ -4,11 +4,9 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.method.DateKeyListener
 import android.widget.CalendarView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.auth.FirebaseAuth
 import android.widget.ProgressBar
 
 class Calendar : AppCompatActivity() {
@@ -22,6 +20,7 @@ class Calendar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activty_calendar)
+
 
         // Finding the calendar in the XML
         val calendarView = findViewById<CalendarView>(R.id.calendarView)
@@ -54,6 +53,7 @@ class Calendar : AppCompatActivity() {
             intent.putExtra("date", datekey)
             startActivity(intent)
         }
+
     }
 
 
@@ -76,9 +76,13 @@ class Calendar : AppCompatActivity() {
 
         var completedQueries = 0
 
+        val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
+
         for (meal in meals) {
 
-            db.collection("foodLogs")
+            db.collection("users")
+                .document(uid)
+                .collection("foodLogs")
                 .document(dateKey)
                 .collection(meal)
                 .get()

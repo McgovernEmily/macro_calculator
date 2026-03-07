@@ -8,15 +8,25 @@ import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import android.view.View
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class MainActivity : AppCompatActivity(){
 
 
+    private lateinit var auth: FirebaseAuth
+    private val db = FirebaseFirestore.getInstance()
+
     // Connecting to the XML.
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        auth = FirebaseAuth.getInstance()
+
+        // The user/
+        val user = auth.currentUser
 
         // Creating variable to the layout.
         val sexInput = findViewById<EditText>(R.id.sexInput)
@@ -26,6 +36,10 @@ class MainActivity : AppCompatActivity(){
         val calButton = findViewById<Button>(R.id.calbutton)
         val activityGroup = findViewById<RadioGroup>(R.id.activityGroup)
 
+        // Checking if the user is logged in already
+        if (user != null) {
+            checkMacroProfile(user.uid)
+        }
 
 
         // When the the edittext is selected the user can type.
@@ -59,6 +73,23 @@ class MainActivity : AppCompatActivity(){
                 activitylevel = activityLevel
             )
 
+            // The user
+            val user = auth.currentUser
+
+            if (user != null) {
+
+                val data = hashMapOf(
+                    "calories" to macros.calories,
+                    "protein" to macros.proteinGrams,
+                    "carbs" to macros.carbGrams,
+                    "fats" to macros.fatGrams
+                )
+
+                db.collection("users")
+                    .document(user.uid)
+                    .set(data)
+            }
+
             val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra("calories", macros.calories)
             intent.putExtra("proteinGrams", macros.proteinGrams)
@@ -70,6 +101,30 @@ class MainActivity : AppCompatActivity(){
 
 
 
+    }
+
+    // Checking if the user has a macro profile
+    private fun checkMacroProfile(uid: String) {
+
+        db.collection("users")
+            .document(uid)
+            .get()
+            .addOnSuccessListener { document ->
+
+                if (document.exists()) {
+
+                    val intent = Intent(this, Calendar::class.java)
+
+                    intent.putExtra("calories", document.getLong("calories")?.toInt() ?: 0)
+                    intent.putExtra("protein", document.getLong("protein")?.toInt() ?: 0)
+                    intent.putExtra("carbs", document.getLong("carbs")?.toInt() ?: 0)
+                    intent.putExtra("fats", document.getLong("fats")?.toInt() ?: 0)
+
+                    startActivity(intent)
+                    finish()
+
+                }
+            }
     }
 
 }

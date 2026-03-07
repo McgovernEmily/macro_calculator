@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.auth.FirebaseAuth
 
 class AddFoodActivity : AppCompatActivity() {
 
@@ -51,11 +52,19 @@ class AddFoodActivity : AppCompatActivity() {
 
     private fun saveFood(food: FoodLog) {
 
+        // The user
+        val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
+
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("foodLogs")
+        val doc = db.collection("users")
+            .document(uid)
+            .collection("foodLogs")
             .document(dateKey)
             .collection(mealType)
-            .add(food)
+            .document()
+
+        food.id = doc.id
+        doc.set(food)
     }
 }
