@@ -1,28 +1,28 @@
 # Macro Calculator
 
-A Macro calculator that calculates your proteins, fats, carbs, and calories based on the user's height, weight, age, activity level, and gender. After the recommended macros are calculated, the user can track their progress on a calendar to see whether they completed their goal for that day.
+A Macro calculator that calculates your proteins, fats, carbs, and calories based on the user's height, weight, age, activity level, and gender. After the recommended macros are calculated, the user can track their progress on a calendar to see whether they completed their goal for that day. Users will be able to select a day on the calendar and input their meals.
 
 ## Instructions for Building and Using
 
 Steps to build and/or run the software:
 
 1. Download and install Android Studio
-2. Create a new project in Android Studio
-3. Select an Empty Activity and name the project
-4. The language will be Kotlin
-5. Using an XML layout design
-6. Create four Kotlin files: MainActivity (bring everything together), MacroCal (user input and macro calculations), ResultActivity (display results), and WeeklyCalendarActivity (the calendar)
-7. Create XML files for each activity
-8. Build and run the program using an Android Emulator or an Android device
+2. Download the files from GitHub
+3. Build and run the program using an Android Emulator or an Android device
    
-
 Instructions for using the software:
 
-1. Open the app on an emulator or Android device  
-2. Enter your gender, age, height, weight, and activity level
-3. Select Calculate
-4. See your recommended macros
-5. Then you can select a calendar to track your goal
+1. Open the app on an emulator or Android device
+2. Log in to your account or create an account 
+3. Enter your gender, age, height, weight, and activity level
+4. Select Calculate
+5. See your recommended macros
+6. Then you can select a calendar to track your goal
+7. Select a day you want to add a meal
+8. Select what type of meal
+9. Input the macros associated with the meal
+10. Save the macros input
+11. Check your progress at the calendar view
 
 ## Development Environment
 
@@ -32,6 +32,7 @@ To recreate the development environment, you need the following software and/or 
 * Kotlin
 * Gradle
 * XML
+* FireStore
 
 ## Useful Websites to Learn More
 
@@ -46,7 +47,6 @@ I found these websites useful in developing this software:
 
 The following items I plan to fix, improve, and/or add to this project in the future:
 
-* [ ] Saves the user's information
 * [ ] Have the calendar go week by week
 * [ ] Create a way to implement workout ideas or training ideas for the user
 * [ ] Make it use both the metric and the imperial system
